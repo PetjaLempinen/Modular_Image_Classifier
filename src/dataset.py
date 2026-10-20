@@ -3,8 +3,8 @@ import torchvision
 import torchvision.transforms as transforms
 from torch.utils.data import DataLoader
 
-# prepares the training and testing data for cifar-100
-def get_cifar100_loaders(data_dir='./data', batch_size=64):
+# prepares the training and testing data for cifar-10
+def get_cifar10_loaders(data_dir='./data', batch_size=64):
     
     # Define data augmentation and normalization for training
     transform_train = transforms.Compose([
@@ -27,7 +27,7 @@ def get_cifar100_loaders(data_dir='./data', batch_size=64):
     ])
 
     # Download and load the training dataset
-    trainset = torchvision.datasets.CIFAR100(
+    trainset = torchvision.datasets.CIFAR10(
         root=data_dir, 
         train=True, 
         download=True, 
@@ -42,7 +42,7 @@ def get_cifar100_loaders(data_dir='./data', batch_size=64):
     )
 
     # Download and load the testing dataset
-    testset = torchvision.datasets.CIFAR100(
+    testset = torchvision.datasets.CIFAR10(
         root=data_dir, 
         train=False, 
         download=True, 

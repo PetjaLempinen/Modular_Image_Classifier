@@ -2,9 +2,9 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-class cifar100cnn(nn.Module):
-    def __init__(self, num_classes=100):
-        super(cifar100cnn, self).__init__()
+class cifar10cnn(nn.Module):
+    def __init__(self, num_classes=10):
+        super(cifar10cnn, self).__init__()
         
         # 4 conventional layers
         self.conv1 = nn.Conv2d(in_channels=3, out_channels=32, kernel_size=3, padding=1)

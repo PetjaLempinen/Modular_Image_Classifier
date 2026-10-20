@@ -2,20 +2,20 @@ import os
 import torch
 import torch.nn as nn
 import torch.optim as optim
-from model import cifar100cnn
-from dataset import get_cifar100_loaders
+from model import cifar10cnn
+from dataset import get_cifar10_loaders
 
 def train_model(epochs=20, batch_size=64, learning_rate=0.001):
     # Set up device for GPU or CPU
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"Using device: {device}")
 
-    # Load data using our dataset module
-    print("Loading CIFAR-100 dataset")
-    train_loader, test_loader = get_cifar100_loaders(data_dir='./data', batch_size=batch_size)
+    # Load data using dataset module
+    print("Loading CIFAR-10 dataset")
+    train_loader, test_loader = get_cifar10_loaders(data_dir='./data', batch_size=batch_size)
 
     # Initialize model, loss function, and optimizer
-    model = cifar100cnn(num_classes=100).to(device)
+    model = cifar10cnn(num_classes=100).to(device)
     
     # CrossEntropyLoss handles multi-class classification
     criterion = nn.CrossEntropyLoss()
@@ -60,7 +60,7 @@ def train_model(epochs=20, batch_size=64, learning_rate=0.001):
 
     # Save the trained model weights
     os.makedirs('saved_models', exist_ok=True)
-    checkpoint_path = 'saved_models/cifar100_cnn.pth'
+    checkpoint_path = 'saved_models/cifar10_cnn.pth'
     torch.save(model.state_dict(), checkpoint_path)
     print(f"Model saved successfully to {checkpoint_path}.")
 
