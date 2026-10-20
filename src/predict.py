@@ -21,7 +21,7 @@ def predict_image(image_path, model_path='saved_models/cifar100_cnn.pth'):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     
     # Load model architecture and weights
-    model = CIFAR100CNN(num_classes=100).to(device)
+    model = cifar100cnn(num_classes=100).to(device)
     model.load_state_dict(torch.load(model_path, map_location=device))
     model.eval()
 
@@ -49,3 +49,4 @@ def predict_image(image_path, model_path='saved_models/cifar100_cnn.pth'):
 
 if __name__ == '__main__':
     print("Prediction script ready. Import or run with an image path.")
+    predict_image('./images/apple.jpg')
