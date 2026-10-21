@@ -41,4 +41,4 @@ def predict_image(image_path, model_path='saved_models/cifar10_cnn.pth'):
 
 if __name__ == '__main__':
     print("Prediction script ready. Import or run with an image path.")
-    predict_image('./images/apple.jpg')
+    predict_image('./images/dog.jpg')

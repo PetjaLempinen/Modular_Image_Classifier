@@ -12,8 +12,8 @@ def get_cifar10_loaders(data_dir='./data', batch_size=64):
         transforms.RandomHorizontalFlip(),
         transforms.ToTensor(),
         transforms.Normalize(
-            mean=[0.5071, 0.4867, 0.4408],
-            std=[0.2675, 0.2565, 0.2761]
+            mean=[0.4914, 0.4822, 0.4465],
+            std=[0.2023, 0.1994, 0.2010]
         )
     ])
 
@@ -21,8 +21,8 @@ def get_cifar10_loaders(data_dir='./data', batch_size=64):
     transform_test = transforms.Compose([
         transforms.ToTensor(),
         transforms.Normalize(
-            mean=[0.5071, 0.4867, 0.4408], 
-            std=[0.2675, 0.2565, 0.2761]
+            mean=[0.4914, 0.4822, 0.4465],
+            std=[0.2023, 0.1994, 0.2010]
         )
     ])
 

@@ -2,3 +2,4 @@ image-classifier
 __pycache__
 data
 images
+saved_models

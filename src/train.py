@@ -15,7 +15,7 @@ def train_model(epochs=20, batch_size=64, learning_rate=0.001):
     train_loader, test_loader = get_cifar10_loaders(data_dir='./data', batch_size=batch_size)
 
     # Initialize model, loss function, and optimizer
-    model = cifar10cnn(num_classes=100).to(device)
+    model = cifar10cnn(num_classes=10).to(device)
     
     # CrossEntropyLoss handles multi-class classification
     criterion = nn.CrossEntropyLoss()
