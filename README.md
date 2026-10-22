@@ -27,21 +27,23 @@ Real-Time Inference: Includes an OpenCV-powered webcam script to test the traine
 
 **How to Use**
 
-***Train the Model***
+*** Download requirements ***
+
+*** Train the Model ***
 Trains the CNN on the CIFAR-10 dataset and saves the trained weights to saved_models/cifar10_cnn.pth:
 
 ```
 python src/train.py
 ```
 
-***Predict a Single Image***
+*** Predict a Single Image ***
 Loads a saved model checkpoint to classify a local image file update the end of predict.py file to the path of your image and run:
 
 ```
 python src/predict.py
 ```
 
-***Run Live Webcam Classification***
+*** Run Live Webcam Classification ***
 Opens your computer's webcam, feeds live frames into the model in real-time, and overlays the predicted label and confidence score on screen. Press q to exit:
 
 ```
