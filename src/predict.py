@@ -17,7 +17,7 @@ def predict_image(image_path, model_path='saved_models/cifar10_cnn.pth'):
     model.load_state_dict(torch.load(model_path, map_location=device))
     model.eval()
 
-    # Preprocess the input image to match CIFAR-100 dimensions and normalization
+    # Preprocess the input image to match CIFAR-10 dimensions and normalization
     transform = transforms.Compose([
         transforms.Resize((32, 32)),
         transforms.ToTensor(),
